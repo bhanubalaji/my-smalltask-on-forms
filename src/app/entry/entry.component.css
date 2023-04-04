@@ -1,0 +1,22 @@
+.allones{
+  display: flex;
+}
+
+
+.firstone{
+  margin-left: 5%;
+}
+.secondone {
+  margin-left: 10%;
+}
+.thirdone{
+  margin-left: 15%;
+}
+.fouthone{
+  margin-left: 20%;
+}
+
+.buttonsave span a{
+  margin-left: 75%;
+
+}

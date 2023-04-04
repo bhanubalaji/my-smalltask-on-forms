@@ -1,0 +1,172 @@
+
+<div>Path_Data: {{x.join(",")}} </div>
+<br>
+<div class="buttonsave">
+  <button (click)="makeRequest()">save</button>
+  {{message}}
+  </div>
+
+
+  <br><br><br>
+<p>Self Details</p>
+
+
+
+<mat-form-field>
+  <mat-label>Enter your name:</mat-label>
+  <input matInput placeholder="Name" [formControl]="nameControl">
+  <mat-error *ngIf="nameControl.hasError('required')">Name is required</mat-error>
+</mat-form-field>
+
+
+
+
+
+
+
+<p>otherdetails</p>
+
+<div  *ngFor="let item of  allofdata ;let i=index"  >
+
+
+<div  *ngIf="item.type=='radio'">
+<div class="firstone">
+
+  <div  *ngFor="let ite of item.enterdata"  >
+    <div *ngIf="i==0||(x[i-1])">
+    <mat-radio-group    [(ngModel)]="x[i]">
+      <mat-radio-button value="{{ite}}">{{ite}}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  </div>
+</div>
+</div>
+
+<div  *ngIf="item.type=='selectoption'">
+  <!-- {{item.type=='selectoption'}} -->
+    <div class=" secondone">
+      <div *ngIf="i==0||(x[i-1])">
+        <mat-form-field>
+          <mat-label>Select an option:</mat-label>
+          <mat-select [(ngModel)]="x[i]">
+            <mat-option *ngFor="let option of item.enterdata" [value]="option">{{ option }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+
+  <div  *ngIf="item.type=='checkbox'">
+<div class ="thirdone">
+  <div *ngIf="i==0||(x[i-1])">
+
+    <div  *ngFor="let ite of item.enterdata;let it=index"  >
+  <mat-checkbox [(ngModel)]="checkbox1Value[it]" (ngModelChange)="onCheckboxChange(ite,i)">{{ite}}</mat-checkbox>
+ </div>
+</div>
+</div>
+
+</div>
+
+
+</div>
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<mat-radio-group [(ngModel)]="selectedOption">
+  <mat-radio-button value="male">male</mat-radio-button>
+  <mat-radio-button value="female">female</mat-radio-button>
+</mat-radio-group>
+
+
+<div class="firstone">
+<div *ngIf="selectedOption">
+<mat-radio-group    [(ngModel)]="subOption">
+  <mat-radio-button value="minor">minor</mat-radio-button>
+  <mat-radio-button value="major">major</mat-radio-button>
+</mat-radio-group>
+</div>
+</div>
+
+
+<div class=" secondone">
+  <div *ngIf="subOption">
+    <mat-form-field>
+      <mat-label>Select an option:</mat-label>
+      <mat-select [(ngModel)]="selectedValue">
+        <mat-option *ngFor="let option of options" [value]="option">{{ option }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+
+<div class ="thirdone">
+<div  *ngIf="selectedValue">
+<mat-checkbox [(ngModel)]="checkbox1Value" (ngModelChange)="onCheckboxChange()">no job</mat-checkbox>
+<mat-checkbox [(ngModel)]="checkbox2Value" (ngModelChange)="onCheckboxChange()">no property</mat-checkbox>
+<mat-checkbox [(ngModel)]="checkbox3Value" (ngModelChange)="onCheckboxChange()">others</mat-checkbox>
+</div>
+</div>
+
+
+<div class="fouthone">
+  <div *ngFor="let item of selectedLabel"  >
+<div  *ngIf="item==='other'">
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="text"></textarea>
+  </mat-form-field>
+</div>
+</div>
+</div> -->

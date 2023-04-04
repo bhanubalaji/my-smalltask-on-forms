@@ -1,0 +1,47 @@
+
+  <div class="container">
+  <div class="typeoption">
+    <label for="input1">Select Type:</label>
+  <select  id="input1" [(ngModel)]="input1Value">
+    <option *ngFor="let option of options">{{option}}</option>
+  </select>
+</div>
+
+
+<div class="dataenter">
+  <label for="input2">Enter data:</label>
+  <input type="text" id="input2" name="enterdata" [(ngModel)]="input2Value">
+  <button  (click)="adddata()">add</button>
+  <span>{{addmessage}}</span>
+</div>
+
+
+<div class="deletealldatabutton">
+
+  <button  (click)="deletealldata()">Delete all data </button>
+{{deletealldatamessage}}
+</div>
+
+
+
+<br><hr>
+
+<div class="deleteone">
+  <label for="input1">delete one:</label>
+  <select  id="input1" [(ngModel)]="deleteoneid">
+    <option *ngFor="let option of xoption;let im=index">{{im}}</option>
+  </select>
+  <button (click)="deleteone(deleteoneid)">delete one </button>
+  {{deleteonedatamessage}}
+</div>
+
+
+</div>
+
+<br>
+<div class="submitbutton">
+  <button (click)="onSubmit()">Submit</button>
+  <div>{{message}}</div>
+</div>
+
+
